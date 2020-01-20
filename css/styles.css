@@ -1,0 +1,184 @@
+/* Universal Resets */
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Universal Resets End */
+
+
+/* CSS variables */
+:root{
+    --primaryFont: 'Lato', sans-serif;
+    --secondaryFont: 'Poppins', sans-serif;
+    --primaryColor: #3fd0d4;
+    --mainTransition: all 0.2s ease-in-out;
+    --letterSpacing: 0.25rem;
+    --lightShadow: box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.75);
+    --heavyShadow: box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+}
+/* CSS variables End */
+
+/* Body Defaults*/
+body{
+    background: #f6f6f6;
+    font-size: 1rem;
+
+}
+img{
+    display: block;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, h7{
+   font-family: var(--secondaryFont);
+}
+
+p{  
+    margin-top: 2rem;
+    font-family: var(--secondaryFont);
+    letter-spacing: 0.1rem;
+}
+
+a{
+    text-decoration: none;
+}
+/* Body Defaults End*/
+
+
+/* Clearfixes */
+
+/* Clearfixes End */
+
+
+/* Helper/Utitlity */
+
+
+/* Helper/Utitlity  End */
+
+/* Global */
+.main-btn, .second-btn{
+    display: inline-block;
+    background: none;
+    outline: 3px solid whitesmoke;
+    margin-top: 3rem;
+    padding: 1rem 1.5rem;
+    font-family: var(--primaryFont);
+    font-size: 1rem;
+    text-transform:uppercase;
+    letter-spacing: var(--letterSpacing);
+    color: whitesmoke;
+}
+
+.main-btn:hover, .second-btn:hover{
+    background: whitesmoke;
+    color: var(--primaryColor);
+    transition: var(--mainTransition);
+}
+
+.second-btn{
+    background: var(--primaryColor);
+    outline: 3px solid var(--primaryColor);
+}
+
+/* Global End */
+
+/* Header */
+
+/* Hero */
+.hero{
+    background: var(--primaryColor);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text{
+    text-align: center;
+}
+
+.continue-exploring{
+    font-size: 3rem;
+    letter-spacing: var(--letterSpacing);
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-text > p{
+    max-width: 35rem;
+    margin: 0 auto;
+    color: whitesmoke;
+
+}
+
+@media screen and (min-width: 768px){
+    .hero{
+        background: linear-gradient(to top, rgba(0,0,0,0.5), #3fd0d4), url('/images/main.jpeg')center/cover no-repeat fixed;
+    }
+    .continue-exploring{
+        font-size: 5rem;
+    }
+}
+/* Hero End */
+
+/* Section Center */
+.section-center{
+    width: 80vw;
+    margin: 2rem auto 1rem auto;
+    max-width: 1170px;
+}
+/* Section Center  End */
+/* About Section */
+.about{
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+.about-us{
+    text-align: center;
+    font-size: 2rem;
+}
+.us{
+    color: var(--primaryColor);
+
+}
+
+.text h1{
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 1080px){
+    .explore-the-difference{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image, .text{
+        flex: 0 0 calc(50% - 2rem);
+        align-self: center;
+    }
+
+    .image::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 5px solid var(--primaryColor);
+        top:-2rem;
+        left: -2rem;
+        z-index: -1;
+    }
+    .image{
+        position: relative;
+    }
+    
+}
+/* About Section End */
+
+
+/* Header End */
