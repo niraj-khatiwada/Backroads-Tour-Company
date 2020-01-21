@@ -33,6 +33,8 @@ img{
 
 h1, h2, h3, h4, h5, h6, h7{
    font-family: var(--secondaryFont);
+   text-transform: uppercase;
+   letter-spacing: var(--letterSpacing);
 }
 
 p{  
@@ -43,6 +45,10 @@ p{
 
 a{
     text-decoration: none;
+}
+
+section{
+    padding: 5rem 0;
 }
 /* Body Defaults End*/
 
@@ -133,13 +139,12 @@ a{
 /* Section Center  End */
 /* About Section */
 .about{
-    margin-top: 3rem;
     text-transform: uppercase;
 }
 
-.about-us{
+.colored-h1{
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 .us{
     color: var(--primaryColor);
@@ -161,18 +166,36 @@ a{
     .image, .text{
         flex: 0 0 calc(50% - 2rem);
         align-self: center;
+        z-index: 1;
     }
 
-    .image::before{
+    .image::before, .image::after{
         content: "";
-        position: absolute;
-        width: 100%;
         height: 100%;
-        border: 5px solid var(--primaryColor);
-        top:-2rem;
-        left: -2rem;
-        z-index: -1;
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
     }
+
+    .image:hover::before, .image:hover::after{
+        transition: all 0.2s linear;
+        
+    }
+    .image:hover::before{
+        background: url('/images/tour-3.jpeg');
+        z-index: -2;
+        top: -6rem;
+        left: -6rem;
+    }
+    .image:hover::after{
+        background: url('/images/tour-4.jpeg');
+        z-index: -1;
+        top: -3rem;
+        left: -3rem;
+    }   
+
     .image{
         position: relative;
     }
@@ -180,5 +203,235 @@ a{
 }
 /* About Section End */
 
+/* Services */
+.services{
+    background: #f0efef;
+}
 
+.services-items div i{
+    background: var(--primaryColor);
+    font-size: 170%;
+    display: inline-block;
+    padding: 1.5rem 1.5rem;
+}
+
+.saving-money, .endless-hiking, .amazing-comfort{
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.saving-money-text, .endless-hiking-text, .amazing-comfort-text{
+    padding-top: 2rem;
+}
+
+.services-items div div p{
+    max-width: 80%;
+    margin: 1rem auto;
+}
+
+@media screen and (min-width: 768px){
+    .services-items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .saving-money, .endless-hiking, .amazing-comfort{
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .saving-money, .endless-hiking, .amazing-comfort{
+        flex: 0 0 calc(33.33% - 1rem);
+    }
+
+    .saving-money, .endless-hiking, .amazing-comfort{
+        display: flex;
+    }
+    .saving-money-text, .endless-hiking-text, .amazing-comfort-text{
+        padding-top: 0;
+        text-align: center;
+    }
+    .services-items div div p{
+        width: 100%;
+        margin: 1rem auto;
+    }
+    .box{
+        flex-grow: 0;
+        justify-content: space-between;
+        display: block;
+    }
+   
+}
+/* Services End*/
+
+/* Featured Tours */
+
+.card-items{
+    margin:3rem 0;
+    box-shadow: 3px 3px 5px grey;
+    position: relative;
+    
+}
+.card-items:hover{
+    transition: var(--mainTransition);
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 10px 0px rgba(0,0,0,0.75);
+}
+.tour-des{
+    padding: 1rem 2rem;
+}
+
+.title{
+    letter-spacing: var(--letterSpacing);
+}
+
+.location{
+    color: var(--primaryColor);
+    letter-spacing: 0.1rem;
+}
+
+.flexing{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    
+}
+
+.price{
+    max-width: 5rem;
+    color: grey;
+    font-weight: lighter;
+}
+
+@media screen and (min-width: 768px){
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+    }
+    .card-items{
+        flex:0 0 calc(50% - 1rem);   
+    }
+}
+
+@media screen and (min-width: 1168px){
+    .card-items{
+        flex:0 0 calc(33.33% - 1rem);
+    }
+}
+
+.date{
+    background: var(--primaryColor);
+    position: absolute;
+    padding: 0.8rem;
+    font-family: var(--primaryFont);
+    font-weight: lighter;
+}
+
+.btn{
+ text-align: center;   
+}
+/* Featured Tours End*/
+
+/* Our Gallery */
+
+.gallery{
+    background: #979797;
+}
+
+.gallery-images{
+    margin: 3rem 0;
+    
+}
+
+.gallery-img{
+    position: relative; 
+}
+
+.gallery-img::after{
+    content: "";
+}
+
+.gallery-img:hover::after{
+    content: "";
+    background: var(--primaryColor);
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; 
+    transition: all 1s linear;
+    z-index:0
+     
+}
+
+.search{
+    visibility: hidden;
+    position: absolute;
+    font-size: 300%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: whitesmoke;
+
+   
+}
+.gallery-img:hover .search{
+    visibility: visible;
+    z-index: 1;
+    
+}
+@media screen and (min-width: 768px){
+    .gallery-images{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .gallery-img{
+        flex: 0 0 50%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .gallery-img{
+        flex:0 0 25%;
+    }
+}
+
+
+/* Our Gallery  End*/
+
+/* Hot Deals */
+
+.deal-form{
+    max-width: 30rem;
+    margin: 0 auto;
+    display: flex;
+    
+    
+}
+.email-form{
+    flex: 1 1 auto;
+}
+
+.email-form, .submit-btn{
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing);
+    border: 2px solid var(--primaryColor);
+    font-size: 1rem;
+}
+
+.submit-btn:hover{
+    background: var(--primaryColor);
+    transition: var(--mainTransition);
+    color: white;
+}
+/* Hot Deals End*/
 /* Header End */
