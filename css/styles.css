@@ -410,14 +410,14 @@ section{
 /* Hot Deals */
 
 .deal-form{
-    max-width: 30rem;
+    max-width: 40rem;
     margin: 0 auto;
     display: flex;
     
     
 }
 .email-form{
-    flex: 1 1 auto;
+    flex: 1 0 auto;
 }
 
 .email-form, .submit-btn{
@@ -435,3 +435,47 @@ section{
 }
 /* Hot Deals End*/
 /* Header End */
+
+/* Footer */
+
+footer{
+    background: black;
+    margin-top: 10rem;
+}
+footer div{
+    padding: 2rem 0 0 0;
+}
+
+.nav-link, .copyright{
+    color: white;
+    letter-spacing: var(--letterSpacing);
+    font-size: 1.2rem;
+    font-family: var(--secondaryFont);
+    padding: 0 1rem;
+    /* flex: 0 0 calc(33.33%) */
+}
+
+.footer-nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sodial-icon{
+    color: white;
+    padding: 0 0.5rem;
+    font-size: 2rem;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+/* Footer End*/
