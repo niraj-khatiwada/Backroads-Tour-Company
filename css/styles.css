@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 /* Universal Resets End */
 
@@ -16,6 +17,7 @@
     --letterSpacing: 0.25rem;
     --lightShadow: box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.75);
     --heavyShadow: box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    
 
 }
 /* CSS variables End */
@@ -90,12 +92,83 @@ section{
 
 /* Global End */
 
+/* Navbar */
+.nav-bar{
+    padding: 0.8rem 1rem;
+}
+
+.logo{
+    width: 852.5px;
+  }
+  
+.logo img {
+    width: 10rem;
+}  
+.social{
+    display: none;
+}
+.nav-btn{
+padding: 5px 10px;
+font-size: 1.2rem;
+color: var(--primaryColor);
+background: transparent;
+border: none;
+text-align: end;
+}
+
+.nav-btn i:active{
+    border: 1px solid var(--primaryColor);
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo, .nav-btn{
+    flex:1 0 50%;
+}
+.header-nav{
+    text-align: center;
+    display: none;
+}
+  .nav-a{
+    color: black;
+    letter-spacing: var(--letterSpacing);
+    font-size: 1rem;
+    font-family: var(--secondaryFont);
+    padding: 0 0.5rem;
+      
+}
+@media screen and (min-width: 992px){
+    .logo, .social, .nav-btn, .header-nav{
+        flex: 1 0 25%;
+        align-items: center;
+    }
+    .social{
+        text-align: end;
+        display: block;
+    }
+    .nav-btn{
+        display: none;
+    }
+    .header-nav{
+        display: flex;
+        justify-content: center;
+        
+    }
+   
+}
+
+/* Navbar */
+
 /* Header */
 
 /* Hero */
 .hero{
     background: var(--primaryColor);
-    min-height: 100vh;
+    min-height: calc(100vh - 54px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -466,6 +539,12 @@ footer div{
     padding: 0 0.5rem;
     font-size: 2rem;
 }
+.sodial-icon:hover{
+    transform: translateY(-5px);
+    transition: all 0.2s linear;
+    color: var(--primaryColor);
+}
+
 .social-links{
     display: flex;
     justify-content: center;
